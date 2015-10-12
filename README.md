@@ -2,7 +2,8 @@
 
 ### Informations ###
 
-This is strategie for generate EmberJs component for [Hopeless Entity Analyzer](https://github.com/Bilgetz/HopelessEntityAnalyzer)
+This is a Gradle plugin for analyze entity and generate file from it.
+you can see an example [Here](https://github.com/Bilgetz/HopelessEmberGeneratorStrategies)
 
 ### How to use ###
 ``
