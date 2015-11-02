@@ -2,6 +2,7 @@ package fr.hopelessworld.plugin.analyzer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,15 +52,21 @@ public class TestStrategy implements GeneratorStrategy {
 
 		// Third entity doit avoir un champ firstEntities
 		Field firstEntityOfThird = null;
+		Field listInteger = null;
 		for (Field field : thirdEntity.getFields()) {
 			if (StringUtils.equals(field.getSimpleName(), "firstEntities")) {
 				firstEntityOfThird = field;
+			} else if (StringUtils.equals(field.getSimpleName(), "integers")) {
+				listInteger = field;
 			}
 		}
 
 		assertNotNull("firstEntities not Found", firstEntityOfThird);
 		assertNotNull("No entity attached for firstEntities", firstEntityOfThird.asAnalyzedEntity());
 		assertEquals("Entity attached is not First", firstEntity, firstEntityOfThird.asAnalyzedEntity());
+
+		assertNotNull("integers not Found", listInteger);
+		assertNull("Entity attached for integers", listInteger.asAnalyzedEntity());
 
 	}
 }

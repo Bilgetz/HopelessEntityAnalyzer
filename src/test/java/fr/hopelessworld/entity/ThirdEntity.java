@@ -28,6 +28,10 @@ public class ThirdEntity {
 	@OneToMany
 	private List<FirstEntity> firstEntities;
 
+	/** The integers. */
+	@OneToMany
+	private List<Integer> integers;
+
 	/**
 	 * Gets the id.
 	 *
@@ -83,6 +87,25 @@ public class ThirdEntity {
 	 */
 	public void setFirstEntities(List<FirstEntity> firstEntities) {
 		this.firstEntities = firstEntities;
+	}
+
+	/**
+	 * Gets the integers.
+	 *
+	 * @return the integers
+	 */
+	public List<Integer> getIntegers() {
+		return integers;
+	}
+
+	/**
+	 * Sets the integers.
+	 *
+	 * @param integers
+	 *            the new integers
+	 */
+	public void setIntegers(List<Integer> integers) {
+		this.integers = integers;
 	}
 
 }
