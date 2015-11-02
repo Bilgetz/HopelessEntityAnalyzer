@@ -26,7 +26,7 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 
 import fr.hopelessworld.plugin.options.StrategyCall;
-import fr.hopelessworld.plugin.predicate.AnalizedEntityPredicate;
+import fr.hopelessworld.plugin.predicate.AnalizedEntityFieldPredicate;
 import fr.hopelessworld.plugin.strategy.GeneratorStrategy;
 
 /**
@@ -134,7 +134,7 @@ public class CodeAnalyzerProcessor extends AbstractProcessor {
         for (AnalizedEntity analizedEntity : entities) {
             for (Field field : analizedEntity.getFields()) {
                 if (field.getAnnotation(ManyToOne.class) != null) {
-                    AnalizedEntity entity = CollectionUtils.find(entities, new AnalizedEntityPredicate(field));
+                    AnalizedEntity entity = CollectionUtils.find(entities, new AnalizedEntityFieldPredicate(field));
                     ((FieldImpl) field).setAnalizedEntity(entity);
                 }
             }

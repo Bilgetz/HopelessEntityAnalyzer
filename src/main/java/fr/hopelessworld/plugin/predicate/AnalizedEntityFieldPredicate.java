@@ -12,7 +12,7 @@ import fr.hopelessworld.plugin.analyzer.Field;
 /**
  * The Class SimpleNameFieldPredicate.
  */
-public class AnalizedEntityPredicate implements Predicate<AnalizedEntity> {
+public class AnalizedEntityFieldPredicate implements Predicate<AnalizedEntity> {
 
     /** The simple name. */
     private final String fieldTypeName;
@@ -23,7 +23,7 @@ public class AnalizedEntityPredicate implements Predicate<AnalizedEntity> {
      * @param simpleName
      *            the simple name
      */
-    public AnalizedEntityPredicate(Field field) {
+    public AnalizedEntityFieldPredicate(Field field) {
         super();
         Validate.notNull(field, "can't be null or blank");
 
