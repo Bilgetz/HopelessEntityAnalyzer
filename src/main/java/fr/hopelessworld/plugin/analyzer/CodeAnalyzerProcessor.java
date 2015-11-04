@@ -113,7 +113,7 @@ public class CodeAnalyzerProcessor extends AbstractProcessor {
 			// pour toute les classes analyse
 			// si c'est une entité
 			if (e.getAnnotation(Entity.class) != null) {
-				entity = new AnalizedEntityImpl();
+				entity = new AnalizedEntityImpl(e);
 				entities.add(entity);
 				entity.setSimpleName(e.getSimpleName().toString());
 				Collection<Field> fields = new ArrayList<Field>();

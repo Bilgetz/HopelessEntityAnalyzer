@@ -39,6 +39,9 @@ public class TestStrategy implements GeneratorStrategy {
 		assertNotNull("thirdEntity is null", thirdEntity);
 		assertEquals("Name ThirdEntity", "ThirdEntity", thirdEntity.getSimpleName());
 
+		assertNotNull("firstEntity advanced is null", firstEntity.advanced());
+		assertEquals("firstEntity package Name", "fr.hopelessworld.entity", thirdEntity.getPackageName().toString());
+
 		// Second entity doit avoir un champ firstEntity
 		Field firstEntityOfSecond = null;
 		for (Field field : secondtEntity.getFields()) {
