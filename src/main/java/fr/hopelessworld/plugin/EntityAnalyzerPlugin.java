@@ -137,6 +137,7 @@ public class EntityAnalyzerPlugin implements Plugin<Project> {
      */
     private void getAllClasses(File directoryFile, List<File> files) {
         Validate.notNull(directoryFile, "Directory of Entity is null");
+        Validate.isTrue(directoryFile.exists(), "Directory must exist:" + directoryFile.getAbsolutePath());
         for (File it : directoryFile.listFiles()) {
             if (it.isDirectory()) {
                 getAllClasses(it, files);
